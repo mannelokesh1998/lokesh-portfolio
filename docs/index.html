@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Manne - Data Engineer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="profile-container">
+        <img src="images/profile.jpg" alt="Your Name - Data Engineer" class="profile-photo">
+        </div>
+        <h1>Lokesh Manne</h1>
+        <p>Cloud Data Engineer | Azure | Databricks | PySpark | Delta Lake</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="nav-link" id="homeLink">Home</a>
+        <a href="projects.html" class="nav-link tooltip" id="projectsLink">Projects
+            <span class="tooltiptext">Check out my data engineering projects!</span>
+        </a>
+    </nav>
+
+    <script>
+        const path = window.location.pathname.toLowerCase();
+        const homeLink = document.getElementById("homeLink");
+        const projectsLink = document.getElementById("projectsLink");
+
+        if (path.includes("projects")) {
+            projectsLink.classList.add("active");
+        } else {
+            homeLink.classList.add("active");
+        }
+    </script>
+
+
+    <section id="about" class="highlight-section">
+        <h2>About Me</h2>
+        <p>I am a passionate Data Engineer with experience in building scalable and secure cloud-native data platforms. My expertise lies in Azure ecosystem tools like Data Factory, Synapse, and Databricks along with PySpark and Delta Lake. I have delivered solutions involving ingestion, transformation, and curation using medallion architecture, and implemented CI/CD and access governance via Unity Catalog and DevOps. I am certified in Azure and Databricks and actively explore GenAI and Microsoft Fabric.</p>
+    </section>
+
+    <section id="skills" class="highlight-section">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Programming Languages:</strong> Python, SQL, Java (Basics)</li>
+            <li><strong>Data Engineering Tools:</strong> Apache Spark, PySpark, Delta Lake, Databricks</li>
+            <li><strong>Cloud Platforms:</strong> Azure (ADF, ADLS Gen2, Synapse, Databricks, Functions), AWS (S3)</li>
+            <li><strong>Orchestration & CI/CD:</strong> Azure Data Factory, Databricks Workflows, Azure DevOps Pipelines, YAML, Git</li>
+            <li><strong>Analytics & BI:</strong> Power BI, Unity Catalog, SQL Notebooks, Lineage, Access Control</li>
+            <li><strong>Streaming & Integration:</strong> Apache EventHub (Basics), REST APIs, Auto Loader</li>
+            <li><strong>Monitoring & Quality:</strong> Checkpointing, Schema Validation, Logging, Alerting</li>
+        </ul>
+    </section>
+
+    <section id="certifications" class="highlight-section">
+        <h2>Certifications</h2>
+        <ul>
+            <li>Microsoft: Azure Data Engineer Associate (DP-203)</li>
+            <li>Microsoft: Azure Administrator (AZ-104)</li>
+            <li>Microsoft: Azure Fundamentals (AZ-900)</li>
+            <li>Databricks: Databricks Accredited Lakehouse Fundamentals (2024–2025)</li>
+            <li>Google: Foundations of Project Management</li>
+            <li>Google: Project Initiation – Starting a Successful Project</li>
+            <li>Udemy: Azure Data Factory for Data Engineers – COVID-19 Project</li>
+            <li>Udemy: Data Warehouse Fundamentals for Beginners</li>
+            <li>Udemy: Complete Python Programming Masterclass (Beginner to Advanced)</li>
+            <li>Udemy: SQL – Introduction to SQL with MySQL</li>
+            <li>Sololearn: Core Java</li>
+            <li>Sololearn: SQL</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Contact: manne.lokesh@outlook.com | <a href="https://www.linkedin.com/in/lokesh-manne/" target="_blank">LinkedIn</a></p>
+    </footer>
+<script>
+  const path = window.location.pathname.toLowerCase();
+  const homeLink = document.getElementById("homeLink");
+  const projectsLink = document.getElementById("projectsLink");
+
+  if (path.includes("projects")) {
+    projectsLink.classList.add("active");
+  } else {
+    homeLink.classList.add("active");
+  }
+
+  // Repeated glow every 30 seconds
+  setInterval(() => {
+    const link = document.getElementById("projectsLink");
+    link.classList.remove("glow-once");
+    void link.offsetWidth; // trigger reflow
+    link.classList.add("glow-once");
+  }, 30000); // 30 seconds
+</script>
+</body>
+</html>

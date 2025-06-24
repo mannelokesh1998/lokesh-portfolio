@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokesh Manne - Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lokesh Manne</h1>
+        <p>Data Engineering Projects</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="nav-link" id="homeLink">Home</a>
+        <a href="projects.html" class="nav-link tooltip" id="projectsLink">Projects
+            <span class="tooltiptext">Check out my data engineering projects!</span>
+        </a>
+    </nav>
+
+    <script>
+        const path = window.location.pathname.toLowerCase();
+        const homeLink = document.getElementById("homeLink");
+        const projectsLink = document.getElementById("projectsLink");
+
+        if (path.includes("projects")) {
+            projectsLink.classList.add("active");
+        } else {
+            homeLink.classList.add("active");
+        }
+    </script>
+
+
+    <section id="projects" class="highlight-section">
+        <h2>Featured Projects</h2>
+
+        <div class="project">
+            <h3>Azure Delta Lakehouse Pipeline</h3>
+            <img src="images/lakehouse-architecture.png" alt="Lakehouse Architecture Diagram">
+            <p><strong>Problem:</strong> Manual data ingestion from IBM Cloud Object Storage to ADLS needed automation, schema enforcement, and reporting integration.</p>
+            <p><strong>Solution:</strong> Built a medallion architecture (Bronze, Silver, Gold) pipeline in Azure using ADF, ADLS Gen2, and Databricks. Added schema validation, optimized Parquet ingestion, and generated Power BI dashboards using Unity Catalog access.</p>
+            <p><strong>Technologies:</strong> Azure Data Factory, Databricks, PySpark, Delta Lake, ADLS Gen2, Power BI, Unity Catalog</p>
+            <a href="https://github.com/mannelokesh1998/azure-datalakehouse-demo" target="_blank">View Code on GitHub</a>
+        </div>
+
+        <div class="project">
+            <h3>Streaming Pipeline with EventHub and PySpark</h3>
+            <img src="images/EventHub-streaming-pipeline.png" alt="EventHub Streaming Pipeline">
+            <p><strong>Problem:</strong> Required near real-time processing of high-volume IoT sensor data for analysis and alerting.</p>
+            <p><strong>Solution:</strong> Built a streaming pipeline using EventHub and PySpark Structured Streaming to transform and write data to Delta Lake tables, enabling real-time dashboards and alerts.</p>
+            <p><strong>Technologies:</strong> Apache EventHub, PySpark, Databricks, Delta Lake, Azure Event Hub</p>
+            <a href="https://github.com/mannelokesh1998/EventHub-streaming-demo" target="_blank">View Code on GitHub</a>
+        </div>
+
+        <div class="project">
+            <h3>Power BI Integration with Unity Catalog</h3>
+            <img src="images/powerbi-unitycatalog.png" alt="Power BI Unity Catalog Diagram">
+            <p><strong>Problem:</strong> Business users needed secure access to curated data with role-based permissions and lineage tracking.</p>
+            <p><strong>Solution:</strong> Configured Unity Catalog with fine-grained access, connected Power BI via service principal, and enabled row-level security and column masking.</p>
+            <p><strong>Technologies:</strong> Unity Catalog, Power BI, Azure Databricks, Azure AD</p>
+            <a href="https://github.com/mannelokesh1998/unitycatalog-powerbi-demo" target="_blank">View Code on GitHub</a>
+        </div>
+
+        <div class="project">
+            <h3>CI/CD Automation for Databricks & ADF</h3>
+            <img src="images/devops-pipeline.png" alt="CI/CD Pipeline Diagram">
+            <p><strong>Problem:</strong> Manual notebook deployment and inconsistent version control slowed release cycles.</p>
+            <p><strong>Solution:</strong> Automated deployment using Azure DevOps pipelines, integrated Databricks Repos and ADF JSON deployment via ARM templates and YAML pipelines.</p>
+            <p><strong>Technologies:</strong> Azure DevOps, YAML, Git, Databricks Repos, ADF ARM Templates</p>
+            <a href="https://github.com/mannelokesh1998/azure-databricks-cicd" target="_blank">View Code on GitHub</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Contact: mannelokesh1998@gmail.com | <a href="https://www.linkedin.com/in/lokesh-manne/" target="_blank">LinkedIn</a></p>
+    </footer>
+<script>
+  const path = window.location.pathname.toLowerCase();
+  const homeLink = document.getElementById("homeLink");
+  const projectsLink = document.getElementById("projectsLink");
+
+  if (path.includes("projects")) {
+    projectsLink.classList.add("active");
+  } else {
+    homeLink.classList.add("active");
+  }
+
+  // Repeated glow every 30 seconds
+  setInterval(() => {
+    const link = document.getElementById("projectsLink");
+    link.classList.remove("glow-once");
+    void link.offsetWidth; // trigger reflow
+    link.classList.add("glow-once");
+  }, 30000); // 30 seconds
+</script>
+</body>
+</html>
